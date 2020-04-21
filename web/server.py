@@ -9,8 +9,23 @@ engine = db.createEngine()
 
 app = Flask(__name__)
 
+@app.route('/espar/<numero>')
+def espar(numero):
+    return str(int(numero)%2 == 0)
 
-@app.route('/static/<content>')
+@app.route('/palindrome/<palabra>')
+def palindrome(palabra):
+    rev=st[::-1]
+    if (palbra==rev):
+        return True
+    else:
+        return False
+
+@app.route('/multiplo/<numero1>/<numero2>')
+
+
+
+@app.route('/static/<content>')#html/hello.hmtl.
 def static_content(content):
     return render_template(content)
 
